@@ -1,5 +1,5 @@
 :root{
---syntax_normal:#1b1e23;
+--syntax_normal:#52525A;
 --syntax_comment:#a9b0bc;
 --syntax_number:#20a5ba;
 --syntax_keyword:#c30771;
@@ -43,13 +43,16 @@
 .observablehq--prototype-key{color:#aaa}
 .observablehq--empty{font-style:oblique}
 .observablehq--purple,
-.observablehq--string{color:var(--syntax_string)}.observablehq--error,
+.observablehq--string{color:var(--syntax_string)}
+.observablehq--error,
 .observablehq--red{color:#e7040f}
 .observablehq--inspect{
-    font:var(--mono_fonts);overflow-x:auto;
-    display:block;white-space:pre
+    font:var(--mono_fonts);
+    overflow-x:auto;
+    display:block;
+    white-space:pre;
 }
 .observablehq--error .observablehq--inspect{
     word-break:break-all;
-    white-space:pre-wrap
+    white-space:pre-wrap;
 }
