@@ -23,7 +23,7 @@ g.append("text")
   .attr("font-size", "20px")
   .attr("text-anchor", "middle")
   .text("Categoría")
-  .attr("fill","#52525A")
+  .attr("fill","#2A2A2F")
 
 // Y label
 g.append("text")
@@ -34,7 +34,7 @@ g.append("text")
   .attr("text-anchor", "middle")
   .attr("transform", "rotate(-90)")
   .text("Cantidad")
-  .attr("fill","#52525A")
+  .attr("fill","#2A2A2F")
 
 d3.csv("data/convocatoria833.csv").then(data => {
   data.forEach(d => {
@@ -76,6 +76,9 @@ d3.csv("data/convocatoria833.csv").then(data => {
     .call(yAxisCall)
     .attr("color","#52525A")
 
+
+    
+
   const rects = g.selectAll("rect")
     .data(data)
   
@@ -104,3 +107,4 @@ d3.csv("data/convocatoria833.csv").then(data => {
   }, 1000)
 
 })
+
