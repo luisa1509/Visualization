@@ -38,7 +38,9 @@ g.append("text")
 
 d3.csv("data/convocatoria833.csv").then(data => {
   data.forEach(d => {
-    d.cantidad = Number(d.cantidad)
+    d.cantidad = Number(d.cantidad);
+    d.color = d.color;
+    console.log(d.color);
   })
 
   const x = d3.scaleBand()
@@ -52,6 +54,7 @@ d3.csv("data/convocatoria833.csv").then(data => {
     .range([HEIGHT, 0])
 
   const xAxisCall = d3.axisBottom(x)
+    .ticks(6)
   g.append("g")
     .attr("class", "x axis")
     .attr("transform", `translate(0, ${HEIGHT})`)
@@ -81,12 +84,23 @@ d3.csv("data/convocatoria833.csv").then(data => {
     .attr("x", (d) => x(d.categoria))
     .attr("width", x.bandwidth)
     .attr("height", d => HEIGHT - y(d.cantidad))
-    .attr("fill", "pink")
-    .attr("r","10px 10px 0 0")
+    .attr("fill", d => d.color)
+    .attr("rx","5px")
+    .attr("createPattern","img/arrow.png")
 
-    .attr("createPattern","img/arrow.png","repeat")
+    
+
+
+    // var img = new Image();
+    // img.src = "img/arrow.png";
+    // img.onload = function() {
+    // var pattern = rects.createPattern(img, "repeat");
+    // rects.fillStyle = pattern;
+    // rects.fillRect(0, 0, 300, 300);
+    // };
 
   d3.interval(() => {
     console.log("Hello World")
   }, 1000)
+
 })

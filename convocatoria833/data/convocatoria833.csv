@@ -1,8 +1,9 @@
-"categoria","cantidad"
-"A","9"
-"A1","7"
-"B","11"
-"C","13"
-"No procede","6"
-"Reconocido","1"
+"categoria","cantidad","color"
+"A","9","#FFB5C2"
+"A1","7", #3777FF
+"B","11", #97D8C4
+"C","13", #CC3454
+"No procede","6", #F2CD30
+"Reconocido","1", #6B9AC4
+
 

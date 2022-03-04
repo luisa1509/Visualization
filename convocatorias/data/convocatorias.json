@@ -1,0 +1,9 @@
+[
+    {"convocatoria":"2013", "A": 3, "A1": 3, "B": 5, "C": 10, "D":20, "Reconocido":7,"Noprocede": 12},
+    {"convocatoria":"2014", "A": 2, "A1": 2, "B": 8, "C": 19, "D":8, "Reconocido":2,"Noprocede": 19},
+    {"convocatoria":"2015", "A": 6, "A1": 2, "B": 11, "C": 26, "D":4, "Reconocido":1,"Noprocede": 10},
+    {"convocatoria":"2017", "A": 8, "A1": 6, "B": 18, "C": 19, "D":0, "Reconocido":2,"Noprocede": 7},
+    {"convocatoria":"2018", "A": 10, "A1": 9, "B": 15, "C": 18, "D":0, "Reconocido":1,"Noprocede": 7}
+]
+
+
