@@ -15,6 +15,16 @@ const svg = d3.select("#chart-area").append("svg")
 const g = svg.append("g")
   .attr("transform", `translate(${MARGIN.LEFT}, ${MARGIN.TOP})`)
 
+    // Tooltip
+const tip = d3.tip()
+.attr('class', 'd3-tip')
+.html(d => {
+  let text = `<strong>Categoría:</strong> <span style='color:#CC3454;text-transform:capitalize'>${d.categoria}</span><br>`
+  text += `<strong>Cantidad:</strong> <span style='color:#CC3454;text-transform:capitalize'>${d.cantidad}</span><br>`
+  return text
+})
+g.call(tip)
+
 // X label
 g.append("text")
   .attr("class", "x axis-label")
@@ -90,8 +100,9 @@ d3.csv("data/convocatoria833.csv").then(data => {
     .attr("fill", d => d.color)
     .attr("rx","5px")
     .attr("createPattern","img/arrow.png")
-
-    
+    .on("mouseover", tip.show)
+		.on("mouseout", tip.hide)
+		.merge(rects)
 
 
     // var img = new Image();
