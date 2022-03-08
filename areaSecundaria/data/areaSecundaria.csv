@@ -1,6 +1,6 @@
-"area","cantidad"
-"Arte","35"
-"Otras Humanidades","8"
-"Ingeniería Mecánica","2"
-"Otras Ciencias Sociales","1"
-"Otras Ingenierías y Tecnologías","1"
+"area","cantidad","color"
+"Arte","35", #FFB5C2
+"Otras Humanidades","8", #3777FF
+"Ingeniería Mecánica","2", #97D8C4
+"Otras Ciencias Sociales","1",#CC3454
+"Otras Ingenierías y Tecnologías","1", #F2CD30

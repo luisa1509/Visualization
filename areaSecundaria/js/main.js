@@ -15,6 +15,18 @@ const svg = d3.select("#chart-area").append("svg")
 const g = svg.append("g")
   .attr("transform", `translate(${MARGIN.LEFT}, ${MARGIN.TOP})`)
 
+
+  // Tooltip
+  const tip = d3.tip()
+  .attr('class', 'd3-tip')
+  .html(d => {
+    let text = `<strong>Área:</strong> <span style='color:#CC3454;text-transform:capitalize'>${d.area}</span><br>`
+    text += `<strong>Cantidad:</strong> <span style='color:#CC3454;text-transform:capitalize'>${d.cantidad}</span><br>`
+    return text
+  })
+  g.call(tip)
+  
+
 // X label
 g.append("text")
   .attr("class", "x axis-label")
@@ -22,7 +34,8 @@ g.append("text")
   .attr("y", HEIGHT + 60)
   .attr("font-size", "20px")
   .attr("text-anchor", "middle")
-  .text("Area")
+  .attr("fill","#2A2A2F")
+  .text("Área")
 
 // Y label
 g.append("text")
@@ -32,11 +45,13 @@ g.append("text")
   .attr("font-size", "20px")
   .attr("text-anchor", "middle")
   .attr("transform", "rotate(-90)")
+  .attr("fill","#2A2A2F")
   .text("Cantidad de Grupos")
 
 d3.csv("data/areaSecundaria.csv").then(data => {
   data.forEach(d => {
     d.cantidad = Number(d.cantidad)
+    d.color = d.color;
   })
 
   const x = d3.scaleBand()
@@ -54,14 +69,16 @@ d3.csv("data/areaSecundaria.csv").then(data => {
     .attr("class", "x axis")
     .attr("transform", `translate(0, ${HEIGHT})`)
     .call(xAxisCall)
+    .attr("color","#52525A")
     .selectAll("text")
       .attr("y", "10")
       .attr("x", "-5")
       .attr("text-anchor", "end")
       .attr("transform", "rotate(-40)")
+      .attr("font-family", "Avenir LT Std")
 
   const yAxisCall = d3.axisLeft(y)
-    .ticks(3)
+    .ticks(5)
     .tickFormat(d => d + "")
   g.append("g")
     .attr("class", "y axis")
@@ -75,7 +92,12 @@ d3.csv("data/areaSecundaria.csv").then(data => {
     .attr("x", (d) => x(d.area))
     .attr("width", x.bandwidth)
     .attr("height", d => HEIGHT - y(d.cantidad))
-    .attr("fill", "grey")
+    .attr("fill", d => d.color)
+    .attr("rx","5px")
+
+		.on("mouseover", tip.show)
+		.on("mouseout", tip.hide)
+		.merge(rects)
 
   d3.interval(() => {
     console.log("Hello World")

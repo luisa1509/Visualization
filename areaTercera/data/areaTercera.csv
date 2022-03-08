@@ -1,9 +1,9 @@
-"area","cantidad"
-"Diseño","27"
-"Arquitectura y Urbanismo","3"
-"Artes plásticas y visuales","3"
-"Filosofía","1"
-"Alimentos y Bebidas","1"
-"Artes audiovisualess","1"
-"Otras artes","1"
-"Ninguna","10"
+"area","cantidad","color"
+"Diseño","27",#FFB5C2
+"Arquitectura y Urbanismo","3", #3777FF
+"Artes plásticas y visuales","3",  #97D8C4
+"Filosofía","1",  #CC3454
+"Alimentos y Bebidas","1", #F2CD30 
+"Artes audiovisualess","1", #6B9AC4
+"Otras artes","1", #FFBE86
+"Ninguna","10", #AB61FC
